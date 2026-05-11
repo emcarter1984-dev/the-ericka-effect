@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Ericka Effect</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#f7efe5;
+      color:#2c2926;
+      font-family:'Inter', sans-serif;
+      overflow-x:hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:999;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 8%;
+      background:rgba(247,239,229,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(184,144,90,.12);
+    }
+
+    .nav-logo{
+      font-family:'Playfair Display', serif;
+      color:#8d6b44;
+      font-size:1.4rem;
+      font-weight:600;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:35px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#665f57;
+      transition:.3s ease;
+      font-size:.95rem;
+    }
+
+    nav a:hover{
+      color:#b8905a;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:130px 8% 80px;
+    }
+
+    .hero-container{
+      max-width:1400px;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:4px;
+      color:#b8905a;
+      margin-bottom:20px;
+      font-size:.85rem;
+    }
+
+    h1{
+      font-family:'Playfair Display', serif;
+      font-size:6rem;
+      line-height:.92;
+      color:#314031;
+      font-weight:600;
+    }
+
+    .effect{
+      font-family:'Great Vibes', cursive;
+      font-size:5rem;
+      color:#b8905a;
+      margin-top:-10px;
+      margin-left:10px;
+    }
+
+    .hero-text p{
+      margin-top:35px;
+      line-height:2;
+      color:#665f57;
+      max-width:550px;
+      font-size:1.05rem;
+    }
+
+    .buttons{
+      margin-top:45px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      transition:.3s ease;
+      font-weight:500;
+    }
+
+    .btn-primary{
+      background:#314031;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#425242;
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      border:1px solid #b8905a;
+      color:#b8905a;
+    }
+
+    .btn-secondary:hover{
+      background:#b8905a;
+      color:white;
+    }
+
+    /* LOGO IMAGE */
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:650px;
+      border-radius:40px;
+      box-shadow:0 25px 60px rgba(0,0,0,.12);
+    }
+
+    /* ABOUT */
+
+    .about{
+      padding:120px 10%;
+      background:white;
+      text-align:center;
+    }
+
+    .section-title{
+      font-family:'Playfair Display', serif;
+      font-size:3.2rem;
+      color:#314031;
+      margin-bottom:25px;
+    }
+
+    .about-text{
+      max-width:850px;
+      margin:auto;
+      line-height:2;
+      color:#66615b;
+      font-size:1.05rem;
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      margin-top:70px;
+    }
+
+    .card{
+      background:#faf5ef;
+      padding:40px;
+      border-radius:28px;
+      border:1px solid rgba(184,144,90,.12);
+      transition:.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 15px 40px rgba(0,0,0,.05);
+    }
+
+    .card h3{
+      font-family:'Playfair Display', serif;
+      color:#314031;
+      margin-bottom:18px;
+      font-size:1.5rem;
+    }
+
+    .card p{
+      line-height:1.9;
+      color:#6a655f;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      padding:130px 10%;
+      background:#314031;
+      color:white;
+      text-align:center;
+    }
+
+    .quote h2{
+      font-family:'Playfair Display', serif;
+      font-size:3rem;
+      line-height:1.6;
+      font-weight:400;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .quote span{
+      font-family:'Great Vibes', cursive;
+      color:#d7b17d;
+      font-size:3.5rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#1f241f;
+      color:#d7d1ca;
+      text-align:center;
+      padding:40px;
+      font-size:.95rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:950px){
+
+      .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto;
+        margin-top:35px;
+      }
+
+      .buttons{
+        justify-content:center;
+      }
+
+      h1{
+        font-size:4.2rem;
+      }
+
+      .effect{
+        font-size:4rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      nav ul{
+        gap:20px;
+      }
+
+      .section-title{
+        font-size:2.4rem;
+      }
+
+      .quote h2{
+        font-size:2rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="nav-logo">
+      The Ericka Effect
+    </div>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Podcast</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <div class="eyebrow">
+          Cozy Conversations • Elevated Living
+        </div>
+
+        <h1>
+          THE<br>
+          ERICKA
+        </h1>
+
+        <div class="effect">
+          Effect
+        </div>
+
+        <p>
+          A warm, elegant space for real conversations, intentional growth,
+          feminine strength, and peaceful living. The Ericka Effect blends
+          cozy luxury with authentic connection.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#" class="btn btn-primary">
+            Listen Now
+          </a>
+
+          <a href="#" class="btn btn-secondary">
+            Follow The Brand
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- YOUR LOGO IMAGE -->
+
+      <div class="hero-image">
+
+        <!-- Replace logo.png with your image file name -->
+        <img src="logo.png" alt="The Ericka Effect Logo">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about">
+
+    <h2 class="section-title">
+      More Than A Podcast
+    </h2>
+
+    <p class="about-text">
+      The Ericka Effect is a lifestyle and conversation brand centered around
+      authenticity, healing, boundaries, confidence, peace, and intentional living.
+      Every interaction is designed to feel warm, elevated, welcoming, and genuine.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Real Conversations</h3>
+
+        <p>
+          Honest discussions about relationships, growth,
+          confidence, healing, and protecting your peace.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Cozy Luxury</h3>
+
+        <p>
+          A calm feminine aesthetic blending warmth,
+          elegance, softness, and modern sophistication.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Intentional Living</h3>
+
+        <p>
+          Encouraging mindfulness, grace,
+          self-worth, and becoming your best self.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section class="quote">
+
+    <h2>
+      “Soft spoken. Strong minded.
+      <br>
+      <span>Intentionally evolving.</span>”
+    </h2>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 The Ericka Effect • Cozy Luxury Lifestyle Brand
+
+  </footer>
+
+</body>
+</html>
